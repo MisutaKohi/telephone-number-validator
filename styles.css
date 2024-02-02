@@ -52,7 +52,7 @@ h1 {
     font-family: sans-serif;
 }
 
-#text-input {
+#user-input {
     width: 80%;
     border-radius: 10px;
     height: 40px;
@@ -60,8 +60,15 @@ h1 {
     text-align: center;
 }
 
-#text-input::placeholder {
+#user-input::placeholder {
     text-align: left;
+}
+
+#results-div {
+    margin-top: 10px;
+    width: 80%;
+    height: 68%;
+    overflow: auto;
 }
 
 button {
@@ -70,6 +77,7 @@ button {
     height: 30px;
     background: linear-gradient(white, gray);
     font-family: sans-serif;
+    cursor: pointer;
 }
 
 .button-left {
