@@ -69,7 +69,11 @@ h1 {
     width: 80%;
     height: 68%;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
+
+#results
 
 button {
     width: 90px;
