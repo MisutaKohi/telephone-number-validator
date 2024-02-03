@@ -73,7 +73,12 @@ h1 {
     flex-direction: column;
 }
 
-#results
+.output-text {
+    color: rgb(74, 57, 13);
+    margin-bottom: -2px;
+    text-align: center;
+    font-size: 18px;
+}
 
 button {
     width: 90px;

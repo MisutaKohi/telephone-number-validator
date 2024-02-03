@@ -3,13 +3,13 @@ const clearButton = document.getElementById('clear-btn');
 const output = document.getElementById('results-div');
 const input = document.getElementById('user-input');
 
-const countryCodeRegex = /\d{1} \d{3} \d{3} \d{4}/;
-const dashesRegex = /\d{1} \d{3}-\d{3}-\d{4}/;
-const parenthesesRegex = /\d{1} (\d{3}) \d{3}-\d{4}/;
-const basicNumberRegex = /\d{9}/;
-const basicDashesRegex = /\d{3}-\d{3}-\d{4}/;
-const basicParenthesesRegex = /(\d{3}) \d{3}-\d{4}/;
-const noSpacesRegex = /\d{1}(\d{3})\d{3}-\d{3}/;
+const countryCodeRegex = /^1 \d{3} \d{3} \d{4}$/;
+const dashesRegex = /^1 \d{3}-\d{3}-\d{4}$/;
+const parenthesesRegex = /^1 \(\d{3}\) \d{3}-\d{4}$/;
+const basicNumberRegex = /^\d{10}$/;
+const basicDashesRegex = /^\d{3}-\d{3}-\d{4}$/;
+const basicParenthesesRegex = /^\(\d{3}\)(?:\s)?\d{3}-\d{4}$/;
+const noSpacesRegex = /^1\(\d{3}\)\d{3}-\d{4}$/;
 
 const validQueries = [countryCodeRegex, dashesRegex, parenthesesRegex, basicNumberRegex, 
     basicDashesRegex, basicParenthesesRegex, noSpacesRegex]
@@ -23,7 +23,7 @@ function validateInput() {
     const isValid = validQueries.some((regex) => regex.test(input.value));
     const validText = isValid ? 'Valid US number:' : 'Invalid US number:';
 
-    let outputHTML = `${validText} ${input.value}`
+    let outputHTML = `<p class='output-text'>${validText} ${input.value}</p>`
     input.value = '';
     output.innerHTML += outputHTML + '\n';
 
